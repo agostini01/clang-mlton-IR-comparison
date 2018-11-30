@@ -1,0 +1,14 @@
+digraph "CFG for 'dot_product' function" {
+	label="CFG for 'dot_product' function";
+
+	Node0x17c5280 [shape=record,label="{%3:\l  %4 = alloca double*, align 8\l  %5 = alloca double*, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca double, align 8\l  %8 = alloca i32, align 4\l  store double* %0, double** %4, align 8\l  store double* %1, double** %5, align 8\l  store i32 %2, i32* %6, align 4\l  store double 0.000000e+00, double* %7, align 8\l  store i32 0, i32* %8, align 4\l  br label %9\l}"];
+	Node0x17c5280 -> Node0x17c5330;
+	Node0x17c5330 [shape=record,label="{%9:\l\l  %10 = load i32, i32* %8, align 4\l  %11 = load i32, i32* %6, align 4\l  %12 = icmp slt i32 %10, %11\l  br i1 %12, label %13, label %30\l|{<s0>T|<s1>F}}"];
+	Node0x17c5330:s0 -> Node0x17c63f0;
+	Node0x17c5330:s1 -> Node0x17c6440;
+	Node0x17c63f0 [shape=record,label="{%13:\l\l  %14 = load double*, double** %4, align 8\l  %15 = load i32, i32* %8, align 4\l  %16 = sext i32 %15 to i64\l  %17 = getelementptr inbounds double, double* %14, i64 %16\l  %18 = load double, double* %17, align 8\l  %19 = load double*, double** %5, align 8\l  %20 = load i32, i32* %8, align 4\l  %21 = sext i32 %20 to i64\l  %22 = getelementptr inbounds double, double* %19, i64 %21\l  %23 = load double, double* %22, align 8\l  %24 = fmul double %18, %23\l  %25 = load double, double* %7, align 8\l  %26 = fadd double %25, %24\l  store double %26, double* %7, align 8\l  br label %27\l}"];
+	Node0x17c63f0 -> Node0x17c6bb0;
+	Node0x17c6bb0 [shape=record,label="{%27:\l\l  %28 = load i32, i32* %8, align 4\l  %29 = add nsw i32 %28, 1\l  store i32 %29, i32* %8, align 4\l  br label %9\l}"];
+	Node0x17c6bb0 -> Node0x17c5330;
+	Node0x17c6440 [shape=record,label="{%30:\l\l  %31 = load double, double* %7, align 8\l  ret double %31\l}"];
+}
