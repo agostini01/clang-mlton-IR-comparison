@@ -6,7 +6,13 @@ Steps to generate the intermediate files
 mlton -keep ssa vecdotvec.sml
 
 # Generate llvm output
-#mlton -verbose 1 -keep g -codegen llvm vecdotvec.sml
+
+# Assebly
+mlton -keep g  vecdotvec.sml
+
+# LLVM
 mlton -keep g -codegen llvm vecdotvec.sml
+
+# C
 mlton -keep g -codegen c vecdotvec.sml
 ```
