@@ -36,10 +36,10 @@ RUN ln -sf dotfiles/.tmux.conf        .tmux.conf
 RUN echo "PS1='\[\033[01;31m\][\[\033[01;30m\]\u@\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '" >> .bashrc
 
 # Copy the working folder to the docker image
-RUN mkdir -p /root/Development/sdh-algs/dotproduct
-WORKDIR  /root/Development/sdh-algs/dotproduct
-COPY ./dotproduct /root/Development/sdh-algs/dotproduct
+RUN mkdir -p /root/Development/sdh-algs
+WORKDIR  /root/Development/sdh-algs
+COPY . /root/Development/sdh-algs
 
-WORKDIR  /root/Development/sdh-algs/dotproduct/c
+WORKDIR  /root/Development/sdh-algs
 
 RUN echo "This container will be autodeleted upon exit"
