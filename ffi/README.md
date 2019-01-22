@@ -7,7 +7,7 @@ mlton -default-ann 'allowFFI true' -export-header export.h import.sml ffi-import
 ./import
 ```
 
-# Example on how to clal C functions from an external library
+# Example on how to call C functions from an external library
 
 In order to call a external C function, the following steps are required:
 
